@@ -1,0 +1,11 @@
+$border-color: #D8D5DF;
+$active-color: #E9FFFA;
+$link-color: #9d9aab;
+$link-color-hover: darken($link-color, 10%);
+$text-color-main: #383160;
+
+$content-width: 800px;
+$info-cell-width: $content-width / 2;
+$other-cell-width: $info-cell-width / 2;
+$avatar-size: 64px;
+$table-row-height: 120px;

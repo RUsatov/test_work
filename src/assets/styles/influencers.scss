@@ -1,0 +1,93 @@
+@import 'variables.scss';
+
+body {
+  color : $text-color-main;
+}
+
+.influencers-table {
+  display: flex;
+  flex-direction: column;
+  max-width: $content-width;
+}
+
+.influencers-row {
+  display: grid;
+  grid-template-columns: $info-cell-width repeat(2, $other-cell-width);
+  grid-template-areas: "info followers rating";
+  height: $table-row-height;
+  border-bottom: 1px solid $border-color;
+  transition: .2s;
+
+  &:hover {
+    background-color: $active-color;
+  }
+
+  &.influencers-row--sort {
+    background-color : transparent;
+  }
+}
+
+.influencers-cell {
+  display: flex;
+  align-items: center;
+  padding : 0 10px;
+
+  &--sort {
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.influencers-cell__followers, .influencers-cell__rating {
+  justify-content: flex-end;
+}
+
+.user-info {
+  display : flex;
+
+  &__text-wrapper {
+    display : flex;
+    flex-direction: column;
+    align-items : flex-start;
+    justify-content : center;
+  }
+}
+
+.user-info__avatar {
+  width: $avatar-size;
+  height: $avatar-size;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.user-info__name {
+  margin: 0 0 10px;
+}
+
+.user-info__social {
+  text-decoration : none;
+  color : $link-color;
+
+  &:hover {
+    color : $link-color-hover;
+  }
+}
+
+.influencers-cell__followers {
+  grid-area: followers;
+}
+
+.influencers-cell__rating {
+  grid-area: rating;
+}
+
+.sort-arrow {
+  display : inline-flex;
+}
+.sort-arrow--rotate {
+  transform: rotate(180deg);
+}
